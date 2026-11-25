@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1074,6 +1074,7 @@ GameObject:
   - component: {fileID: 985482953}
   - component: {fileID: 985482952}
   - component: {fileID: 985482951}
+  - component: {fileID: 985482955}
   m_Layer: 5
   m_Name: Btn_NewGame
   m_TagString: Untagged
@@ -1113,8 +1114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b275aa3f5d445be44af9d41acab4e6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
-  hoverCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  buttonText: {fileID: 0}
+  hoverPrefix: '>> '
 --- !u!114 &985482952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,7 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1209,6 +1210,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985482949}
   m_CullTransparentMesh: 1
+--- !u!114 &985482955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985482949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c098c9dcc8ad7824cbc2a351b4b76301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverCursor
+  hoverCursor: {fileID: 2800000, guid: 49c7be22025237141a8a037e4e3c7680, type: 3}
+  cursorHotspot: {x: 6, y: 0}
 --- !u!1 &1102051345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,6 +1237,7 @@ GameObject:
   - component: {fileID: 1102051349}
   - component: {fileID: 1102051348}
   - component: {fileID: 1102051347}
+  - component: {fileID: 1102051351}
   m_Layer: 5
   m_Name: Btn_Continue
   m_TagString: Untagged
@@ -1261,8 +1277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b275aa3f5d445be44af9d41acab4e6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
-  hoverCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  buttonText: {fileID: 0}
+  hoverPrefix: '>> '
 --- !u!114 &1102051348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,7 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1357,6 +1373,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102051345}
   m_CullTransparentMesh: 1
+--- !u!114 &1102051351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102051345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c098c9dcc8ad7824cbc2a351b4b76301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverCursor
+  hoverCursor: {fileID: 2800000, guid: 49c7be22025237141a8a037e4e3c7680, type: 3}
+  cursorHotspot: {x: 6, y: 0}
 --- !u!1 &1299513873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1981,7 +2011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

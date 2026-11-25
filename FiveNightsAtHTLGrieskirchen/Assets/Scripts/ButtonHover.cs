@@ -4,15 +4,18 @@ using TMPro;
 
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Texture2D hoverCursor;
-    public Vector2 cursorHotspot = Vector2.zero;
+    public TMP_Text buttonText;
+    public string hoverPrefix = ">> ";
 
-    private TMP_Text buttonText;
     private string originalText;
 
     private void Awake()
     {
-        buttonText = GetComponentInChildren<TMP_Text>();
+        if (buttonText == null)
+        {
+            buttonText = GetComponentInChildren<TMP_Text>();
+        }
+
         if (buttonText != null)
         {
             originalText = buttonText.text;
@@ -23,11 +26,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         if (buttonText != null)
         {
-            buttonText.text = ">> " + originalText;
-        }
-        if (hoverCursor != null)
-        {
-            Cursor.SetCursor(hoverCursor, cursorHotspot, CursorMode.Auto);
+            buttonText.text = hoverPrefix + originalText;
         }
     }
 
@@ -37,11 +36,13 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             buttonText.text = originalText;
         }
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     private void OnDisable()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        if (buttonText != null)
+        {
+            buttonText.text = originalText;
+        }
     }
 }
