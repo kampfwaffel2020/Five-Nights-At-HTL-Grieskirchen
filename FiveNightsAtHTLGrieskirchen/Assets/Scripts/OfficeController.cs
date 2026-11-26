@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 
 public class OfficeController : MonoBehaviour
 {
+    #region References
+    public ScreenManager screenManager;
     public Image officeImage;
     public TMP_Text lightHintText;
     public float lightHintDuration = 5f;
@@ -17,10 +19,14 @@ public class OfficeController : MonoBehaviour
     public Sprite doorOpenLightOn;
     public Sprite doorClosedLightOff;
     public Sprite doorClosedLightOn;
+    #endregion
 
+    #region State
     public bool isDoorClosed;
     public bool isLightOn;
+    #endregion
 
+    #region Unity Lifecycle
     private void Start()
     {
         UpdateOfficeVisual();
@@ -33,28 +39,35 @@ public class OfficeController : MonoBehaviour
 
     private void Update()
     {
-#if ENABLE_INPUT_SYSTEM
-        if (Keyboard.current != null && Keyboard.current.cKey.wasPressedThisFrame)
-        {
-            ToggleLight();
-        }
-#else
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ToggleLight();
-        }
-#endif
-    }
+        bool canUseLight = screenManager == null || screenManager.IsInOffice;
+        bool lightPressed = false;
 
+        if (canUseLight)
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                lightPressed = Keyboard.current.cKey.isPressed;
+            }
+#else
+            lightPressed = Input.GetKey(KeyCode.C);
+#endif
+        }
+
+        if (lightPressed != isLightOn)
+        {
+            isLightOn = lightPressed;
+            UpdateOfficeVisual();
+        }
+    }
+    #endregion
+
+    #region Actions
     public void ToggleDoor()
     {
-        isDoorClosed = !isDoorClosed;
-        UpdateOfficeVisual();
-    }
+        if (screenManager != null && !screenManager.IsInOffice) return;
 
-    public void ToggleLight()
-    {
-        isLightOn = !isLightOn;
+        isDoorClosed = !isDoorClosed;
         UpdateOfficeVisual();
     }
 
@@ -100,4 +113,5 @@ public class OfficeController : MonoBehaviour
             officeImage.sprite = doorOpenLightOff;
         }
     }
+    #endregion
 }
