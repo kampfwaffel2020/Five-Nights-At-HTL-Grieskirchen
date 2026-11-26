@@ -843,6 +843,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoverCursor
   hoverCursor: {fileID: 2800000, guid: 49c7be22025237141a8a037e4e3c7680, type: 3}
   cursorHotspot: {x: 6, y: 0}
+--- !u!1 &417563919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417563920}
+  m_Layer: 5
+  m_Name: Panel_HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &417563920
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417563919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1990591473}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &496794154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,18 +1397,17 @@ MonoBehaviour:
   cameraSystem: {fileID: 1270151667}
   monitorFlipImage: {fileID: 246727396}
   monitorFlipFrames:
-  - {fileID: -963791335356448533, guid: cad5933c38174f9438a6e32d3988f5b0, type: 3}
-  - {fileID: 7236970418971138015, guid: e95c2f8393e7b53458ffe2afef50d2d4, type: 3}
-  - {fileID: -1669221820070231874, guid: 8c6af238450f92742924ebf2a1eb29e9, type: 3}
-  - {fileID: 3420129048058878891, guid: e21d218d6d0d6884c9f0f932f507e35e, type: 3}
-  - {fileID: 3378442778122953735, guid: 2bff3c5517d60cb408447f455e5843fe, type: 3}
-  - {fileID: -6515318933371099371, guid: 5822228f262fd7c43820e09202e80400, type: 3}
-  - {fileID: 2793286064792290627, guid: b1deb41e67c0db84793e5d611ed1b4ff, type: 3}
-  - {fileID: 8066946747507999253, guid: bbc92d8ea108bb7428d7325d0327c696, type: 3}
-  - {fileID: 1850122315572980378, guid: 9d9950cb21a1f464e8aa356e74376271, type: 3}
-  - {fileID: -3408680597838663119, guid: f5f52bfaaa44a6845801fc6a0cdb3754, type: 3}
-  - {fileID: 6872035018144819986, guid: 75829db012b77d14ab7e5808c935c959, type: 3}
-  - {fileID: -6895657972868905351, guid: 249d51d3af1cbdb47afe2822abdfc7c0, type: 3}
+  - {fileID: 21300000, guid: cad5933c38174f9438a6e32d3988f5b0, type: 3}
+  - {fileID: 21300000, guid: e95c2f8393e7b53458ffe2afef50d2d4, type: 3}
+  - {fileID: 21300000, guid: 8c6af238450f92742924ebf2a1eb29e9, type: 3}
+  - {fileID: 21300000, guid: e21d218d6d0d6884c9f0f932f507e35e, type: 3}
+  - {fileID: 21300000, guid: 2bff3c5517d60cb408447f455e5843fe, type: 3}
+  - {fileID: 21300000, guid: 5822228f262fd7c43820e09202e80400, type: 3}
+  - {fileID: 21300000, guid: b1deb41e67c0db84793e5d611ed1b4ff, type: 3}
+  - {fileID: 21300000, guid: bbc92d8ea108bb7428d7325d0327c696, type: 3}
+  - {fileID: 21300000, guid: 9d9950cb21a1f464e8aa356e74376271, type: 3}
+  - {fileID: 21300000, guid: f5f52bfaaa44a6845801fc6a0cdb3754, type: 3}
+  - {fileID: 21300000, guid: 75829db012b77d14ab7e5808c935c959, type: 3}
   flipFramesPerSecond: 30
   monitorBarRect: {fileID: 1231941537}
   pcBarOffsetX: -260
@@ -4334,6 +4368,7 @@ RectTransform:
   m_Children:
   - {fileID: 1916839187}
   - {fileID: 885241791}
+  - {fileID: 417563920}
   - {fileID: 1231941537}
   - {fileID: 246727398}
   m_Father: {fileID: 0}
